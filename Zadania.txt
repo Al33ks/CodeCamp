@@ -1,0 +1,13 @@
+1. Napisz program, który wczytuje 
+od uzytkownika imię i wypisuje je "Witaj, {imie}"
+konsola
+
+2. Napisz program, który oblicza pole prosokąta 
+o podanych przez uzytkownika długościach boku.
+
+
+3. Napisz program, który wczytuje od  użytkownika
+ dwie liczby całkowite oraz zmiennoprzecinkowe
+ i wyświetla ich sumę, różnicę, iloczyn, iloraz
+
+

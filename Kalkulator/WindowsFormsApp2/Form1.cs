@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kalkulator
+namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
@@ -16,13 +16,11 @@ namespace Kalkulator
         string Operation;
         public Form1()
         {
+
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void l1_Click(object sender, EventArgs e)
         {
@@ -98,7 +96,7 @@ namespace Kalkulator
 
         private void l7_Click(object sender, EventArgs e)
         {
-            if (textBox_Result.Text == "0" && textBox_Result.Text != null)
+            if(textBox_Result.Text == "0" && textBox_Result.Text != null)
             {
                 textBox_Result.Text = "7";
             }
@@ -116,13 +114,13 @@ namespace Kalkulator
             }
             else
             {
-                textBox_Result.Text = textBox_Result.Text + "8";
+                textBox_Result.Text = textBox_Result.Text + "7";
             }
         }
 
         private void l9_Click(object sender, EventArgs e)
         {
-            if (textBox_Result.Text == "" && textBox_Result.Text != null)
+            if (textBox_Result.Text == "0" && textBox_Result.Text != null)
             {
                 textBox_Result.Text = "9";
             }
@@ -144,19 +142,18 @@ namespace Kalkulator
             Operation = "+";
         }
 
-        private void BtnMin_Click(object sender, EventArgs e)
+        private void BtnDiv_Click(object sender, EventArgs e)
+        {
+            FirstNumber = Convert.ToDouble(textBox_Result.Text);
+            textBox_Result.Text = "0"; 
+            Operation = "/";
+        }
+        private void BtnSub_Click(object sender, EventArgs e)
         {
             FirstNumber = Convert.ToDouble(textBox_Result.Text);
             textBox_Result.Text = "0";
             Operation = "-";
-        }
-
-        private void BtnDiv_Click(object sender, EventArgs e)
-        {
-            FirstNumber = Convert.ToDouble(textBox_Result.Text);
-            textBox_Result.Text = "0";
-            Operation = "/";
-        }
+       }
 
         private void BtnMul_Click(object sender, EventArgs e)
         {
@@ -165,15 +162,14 @@ namespace Kalkulator
             Operation = "×";
         }
 
-
-        private void BtnClear_Click(object sender, EventArgs e)
+        private void BtnCe_Click(object sender, EventArgs e)
         {
             textBox_Result.Text = "0";
         }
 
-        private void BtnDot_Click(object sender, EventArgs e)
+        private void BtnC_Click(object sender, EventArgs e)
         {
-            textBox_Result.Text = textBox_Result.Text + ".";
+            textBox_Result.Text = "0";
         }
 
         private void BtnEqual_Click(object sender, EventArgs e)
@@ -181,53 +177,31 @@ namespace Kalkulator
             double SecondNumber;
             double Result;
 
-            SecondNumber = Convert.ToDouble(textBox_Result.Text);
-
-            if (Operation == "+")
+            switch (Operation)
             {
-                Result = (FirstNumber + SecondNumber);
-                textBox_Result.Text = Convert.ToString(Result);
-                FirstNumber = Result;
-            }
-
-            if (Operation == "-")
-            {
-                Result = (FirstNumber - SecondNumber);
-                textBox_Result.Text = Convert.ToString(Result);
-                FirstNumber = Result;
-            }
-
-            if (Operation == "×")
-            {
-                Result = (FirstNumber * SecondNumber);
-                textBox_Result.Text = Convert.ToString(Result);
-                FirstNumber = Result;
-            }
-
-            if (Operation == "/")
-            {
-                if (SecondNumber == 0)
-                {
-                    textBox_Result.Text = "PAMIĘTAJ CHOLERO NIE DZIEL PRZEZ ZERO!";
-
-                }
-                else
-                {
-                    Result = (FirstNumber / SecondNumber);
+                case "+":
+                    Result = (FirstNumber + SecondNumber);
                     textBox_Result.Text = Convert.ToString(Result);
                     FirstNumber = Result;
-                }
+                    break;
+                case "-":
+                    Result = FirstNumber - SecondNumber;
+                    textBox_Result.Text = Convert.ToString(Result);
+                    FirstNumber = Result;
+                    break;
+                case "":
+                    Result = FirstNumber * SecondNumber;
+                    textBox_Result.Text = Convert.ToString(Result);
+                    FirstNumber = Result;
+                    break;
+                case "/":
+                    Result = FirstNumber / SecondNumber;
+                    textBox_Result.Text = Convert.ToString(Result);
+                    FirstNumber = Result;
+                    break;
+
+                    
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (textBox_Result.Text == "0")
-            {
-                textBox_Result.Clear();
-            }
-        }
-
-
     }
 }

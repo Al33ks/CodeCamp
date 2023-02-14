@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DCA04514-78FB-49CD-822D-DF5FE7FAB9C3}</ProjectGuid>
+    <ProjectGuid>{0E5D42D3-471C-477E-985E-B45B442ECBE2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Kalkulator</RootNamespace>
-    <AssemblyName>Kalkulator</AssemblyName>
+    <RootNamespace>WindowsFormsApp2</RootNamespace>
+    <AssemblyName>WindowsFormsApp2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
