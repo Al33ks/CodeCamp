@@ -1,7 +1,13 @@
 1. Napisz program, który wczytuje 
-od uzytkownika imię i wypisuje je "Witaj, {imie}"
+od uzytkownika imię i wypisuje je "Witaj, {imie}"(
+($"Witaj {imie}")
+Console.WriteLine();
+Console.ReadLine();
 konsola
 
+Console.WriteLine("Jak masz na imie");
+string imie = Console.ReadLine();
+Console.WriteLine($"Masz na imie  {imie}")
 2. Napisz program, który oblicza pole prosokąta 
 o podanych przez uzytkownika długościach boku.
 
